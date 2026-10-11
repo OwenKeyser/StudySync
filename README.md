@@ -12,6 +12,10 @@ structured study sessions. By visualizing upcoming deadlines and tracking daily
 progress, students can eliminate last-minute cramming, reduce academic stress, and 
 stay on top of their semester goals. 
 
+## Github Link
+
+https://github.com/OwenKeyser/StudySync
+
 ## Team Members:
 1. Kevin Chang
 2. Owen Keyser
