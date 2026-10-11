@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign In | StudySync</title>
+  <link rel="stylesheet" href="login.css">
+  <script src="login.js" defer></script>
+</head>
+<body>
+  <header><a href="dashboard.html">StudySync</a></header>
+  <main class="login-card">
+    <h1>Welcome to StudySync</h1>
+    <p>Sign in to plan your next study session.</p>
+    <p class="notice">Milestone demo only: this form does not authenticate users or protect data. Do not enter a real password.</p>
+    <form id="login-form">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" autocomplete="email" placeholder="student@example.com" required>
+      <label for="password">Password (demo only)</label>
+      <input id="password" name="password" type="password" autocomplete="off" minlength="6" placeholder="Any 6+ characters (not a real password)" required>
+      <button type="submit">Continue to dashboard</button>
+    </form>
+    <p id="login-message" role="status" aria-live="polite"></p>
+    <a href="schedule.html">View study schedule</a>
+  </main>
+</body>
+</html>
