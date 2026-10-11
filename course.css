@@ -20,7 +20,7 @@ body {
 
 .course-grid {
     display: grid;
-    grid: 1fr / 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 25px;
 }
 
@@ -108,7 +108,6 @@ button:focus-visible, a:focus-visible, input:focus-visible {
     outline: 3px solid #ffbf47;
     outline-offset: 3px;
 }
-
 
 .notice {
     background:#fff5d9;
