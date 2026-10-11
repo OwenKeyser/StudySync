@@ -97,3 +97,23 @@ button {
 button:hover {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
+
+
+/* Navigation between StudySync pages */
+
+.studysync-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px 0;
+}
+
+.studysync-nav a {
+    color: #234fc2;
+    font-weight: 600;
+}
+
+.studysync-nav a:focus-visible {
+    outline: 3px solid #ffbf47;
+    outline-offset: 3px;
+}
