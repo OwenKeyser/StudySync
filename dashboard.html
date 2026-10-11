@@ -10,135 +10,135 @@
 
     <body>
         <!-- Navigation to StudySync pages -->
-        <nav aria-label="Main navigation" class="studysync-nav">
-            <a href="dashboard.html" aria-current="page">Dashboard</a>
-            <a href="schedule.html">Study Schedule</a>
-            <a href="login.html">Sign In</a>
-        </nav>
+        <header class="topbar">
+            <a class="brand" href="dashboard.html">StudySync</a>
+            <nav aria-label="Main navigation">
+                <a href="dashboard.html" aria-current="page">Dashboard</a>
+                <a href="schedule.html">Schedule</a>
+                <a href="course.html">Courses</a>
+                <a href="login.html">Sign in</a>
+            </nav>
+        </header>
+        
+        <main class="layout">
+            <h1>Dashboard</h1>
 
-        <h1>Dashboard</h1>
+            <p class="notice">Milestone demo only: this page is using demo data and cannot be edited.</p>
 
-        <div class="dashboard-container">
-            <div class="deadline-container">
-                <h2>Upcoming Deadlines</h2>
+            <div class="dashboard-container">
+                <div class="deadline-container">
+                    <h2>Upcoming Deadlines</h2>
 
-                <table>
-                    <tr>
-                        <th>Assignment</th>
-                        <th>Due Date</th>
-                        <th>Status</th>
-                        <th>Course</th>
-                    </tr>
+                    <table>
+                        <tr>
+                            <th>Assignment</th>
+                            <th>Due Date</th>
+                            <th>Status</th>
+                            <th>Course</th>
+                        </tr>
 
-                    <tr>
-                        <td>Homework #1</td>
-                        <td>10/15/2026</td>
-                        <td>Submitted</td>
-                        <td>CSPC 362</td>
-                    </tr>
+                        <tr>
+                            <td>Homework #1</td>
+                            <td>10/15/2026</td>
+                            <td>Submitted</td>
+                            <td>CSPC 362</td>
+                        </tr>
 
-                    <tr>
-                        <td>Homework #2</td>
-                        <td>10/23/2026</td>
-                        <td>Not submitted</td>
-                        <td>CSPC 351</td>
-                    </tr>
-                </table>
+                        <tr>
+                            <td>Homework #2</td>
+                            <td>10/23/2026</td>
+                            <td>Not submitted</td>
+                            <td>CSPC 351</td>
+                        </tr>
+                    </table>
+                </div>
 
-                <button>Edit Upcoming Deadlines</button>
-            </div>
+                <div class="study-task-container">
+                    <h2>Study Tasks</h2>
 
-            <div class="study-task-container">
-                <h2>Study Tasks</h2>
+                    <table>
+                        <tr>
+                            <th>Study Task</th>
+                            <th>Priority</th>
+                            <th>Time Frame</th>
+                        </tr>
+                        <tr>
+                            <td>Read Chapter 1</td>
+                            <td>Meduim</td>
+                            <td>30 minutes</td>
+                        </tr>
+                        <tr>
+                            <td>Start Project 2</td>
+                            <td>High</td>
+                            <td>1 hour</td>
+                        </tr>
+                    </table>
+                </div>
 
-                <table>
-                    <tr>
-                        <th>Study Task</th>
-                        <th>Priority</th>
-                        <th>Time Frame</th>
-                    </tr>
-                    <tr>
-                        <td>Read Chapter 1</td>
-                        <td>Meduim</td>
-                        <td>30 minutes</td>
-                    </tr>
-                    <tr>
-                        <td>Start Project 2</td>
-                        <td>High</td>
-                        <td>1 hour</td>
-                    </tr>
-                </table>
+                <div class="course-container">
+                    <h2>
+                        Courses
+                    </h2>
 
-                <button>Edit Study Tasks</button>
-            </div>
-
-            <div class="course-container">
-                <h2 style="padding-left: 20px; padding-top: 20px;">
-                    Courses
-                </h2>
-
-                <div class="course-grid">
-                    <div class="course">
-                        <div class="course-image"
-                             style="background-color: orange;"></div>
-                        <div class="course-info">
-                            <span style="font-weight: bold; color: orange;">
-                                CPSC 362 - Front-end Engineering
-                            </span>
-                            <br>
-                            Meeting Time: M/W 1:00pm-2:00pm
-                            <br>
-                            Grade: 98%
+                    <div class="course-grid">
+                        <div class="course">
+                            <div class="course-image"
+                                style="background-color: rgb(216, 140, 0);"></div>
+                            <div class="course-info">
+                                <span style="font-weight: bold; color: rgb(216, 140, 0);">
+                                    CPSC 362 - Front-end Engineering
+                                </span>
+                                <br>
+                                Meeting Time: M/W 1:00pm-2:00pm
+                                <br>
+                                Grade: 98%
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="course">
-                        <div class="course-image"
-                             style="background-color: green;"></div>
-                        <div class="course-info">
-                            <span style="font-weight: bold; color: green;">
-                                CPSC 471 - Computer Communication
-                            </span>
-                            <br>
-                            Meeting Time: T/Th 4:00pm-5:00pm
-                            <br>
-                            Grade: 92%
+                        <div class="course">
+                            <div class="course-image" style="background-color: rgb(0, 97, 0);"></div>
+                            <div class="course-info">
+                                <span style="font-weight: bold; color: rgb(0, 97, 0);">
+                                    CPSC 471 - Computer Communication
+                                </span>
+                                <br>
+                                Meeting Time: T/Th 4:00pm-5:00pm
+                                <br>
+                                Grade: 92%
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="course">
-                        <div class="course-image"
-                             style="background-color: orangered;"></div>
-                        <div class="course-info">
-                            <span style="font-weight: bold; color: orangered;">
-                                CPSC 351 - Operating Systems
-                            </span>
-                            <br>
-                            Meeting Time: T 10:00am-12:00pm
-                            <br>
-                            Grade: 89%
+                        <div class="course">
+                            <div class="course-image"
+                                style="background-color: rgb(204, 54, 0);"></div>
+                            <div class="course-info">
+                                <span style="font-weight: bold; color: rgb(204, 54, 0);">
+                                    CPSC 351 - Operating Systems
+                                </span>
+                                <br>
+                                Meeting Time: T 10:00am-12:00pm
+                                <br>
+                                Grade: 89%
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="course">
-                        <div class="course-image"
-                             style="background-color: blueviolet;"></div>
-                        <div class="course-info">
-                            <span style="font-weight: bold; color: blueviolet;">
-                                CPSC 315 - Ethics in Computing
-                            </span>
-                            <br>
-                            Meeting Time: M/W 9:00am-10:00am
-                            <br>
-                            Grade: 85%
+                        <div class="course">
+                            <div class="course-image"
+                                style="background-color: blueviolet;"></div>
+                            <div class="course-info">
+                                <span style="font-weight: bold; color: blueviolet;">
+                                    CPSC 315 - Ethics in Computing
+                                </span>
+                                <br>
+                                Meeting Time: M/W 9:00am-10:00am
+                                <br>
+                                Grade: 85%
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <button style="margin-left: 35px; margin-bottom: 35px;">
-                    Edit Courses
-                </button>
             </div>
-        </div>
+        </main>
+        
     </body>
 </html>
