@@ -10,5 +10,5 @@ loginForm.addEventListener('submit', event => {
   try { sessionStorage.setItem('studysync.demoEmail', email); }
   catch { /* Demo navigation still works without session storage. */ }
   // Password is deliberately not read, checked, transmitted, or saved.
-  window.location.assign('dashboard.html');
+  window.location.assign('../pages/dashboard.html');
 });
