@@ -3,6 +3,7 @@
     <head>
         <title>StudySync Courses</title>
         <link rel="stylesheet" href="../styles/course.css">
+        <script src="../scripts/course.js" defer></script>
     </head>
 
     <body>
@@ -19,153 +20,29 @@
         <main class="layout">
             <h1>Courses</h1>
 
-            <p class="notice">Milestone demo only: this page is using demo course data and cannot be edited.</p>
-
-            <div class="course-grid">
-                <div class="course">
-                    <div class="course-info">
-                        <h2><span style="font-weight: bold; color: orange;">CPSC 362 - Front-end Engineering</span></h2>
-                        Meeting Time: M/W 1:00pm-2:00pm
-                        <br>
-                        Grade: 98%
-                    </div>
-
-                    <div class="course-content">
-                        <table>
-                            <tr>
-                                <th>Assignment</th>
-                                <th>Due Date</th>
-                                <th>Status</th>
-                            </tr>
-
-                            <tr>
-                                <td>Homework #1</td>
-                                <td>10/15/2026</td>
-                                <td>Submitted</td>
-                            </tr>
-                        </table>
-                    </div>
-
-                    <button>Edit Class and Assignments</button>
-                </div>
-
-                <div class="course">
-                    <div class="course-info">
-                        <h2><span style="font-weight: bold; color: green;">CPSC 471 - Computer Communication</span></h2>
-                        Meeting Time: T/Th 4:00pm-5:00pm
-                        <br>
-                        Grade: 92%
-                    </div>
-
-                    <div class="course-content">
-                        <table>
-                            <tr>
-                                <th>Assignment</th>
-                                <th>Due Date</th>
-                                <th>Status</th>
-                            </tr>
-
-                            <tr>
-                                <td>Homework #1</td>
-                                <td>10/11/2026</td>
-                                <td>Submitted</td>
-                            </tr>
-            
-                            <tr>
-                                <td>Homework #2</td>
-                                <td>10/17/2026</td>
-                                <td>Not Submitted</td>
-                            </tr>
-                                
-                            <tr>
-                                <td>Project #1</td>
-                                <td>10/24/2026</td>
-                                <td>Not Submitted</td>
-                            </tr>
-                
-                            <tr>
-                                <td>Discussion #1</td>
-                                <td>10/15/2026</td>
-                                <td>Not Submitted</td>
-                            </tr>
-                        </table>
-                    </div>
-
-                    <button>Edit Class and Assignments</button>
-                </div>
-
-                <div class="course">
-                    <div class="course-info">
-                        <h2><span style="font-weight: bold; color: orangered;">CPSC 351 - Operating Systems</span></h2>
-                        Meeting Time: T 10:00am-12:00pm
-                        <br>
-                        Grade: 89%
-                    </div>
-
-                    <div class="course-content">
-                        <table>
-                            <tr>
-                                <th>Assignment</th>
-                                <th>Due Date</th>
-                                <th>Status</th>
-                            </tr>
-
-                            <tr>
-                                <td>Homework #1</td>
-                                <td>10/15/2026</td>
-                                <td>Submitted</td>
-                            </tr>
-
-                            <tr>
-                                <td>Homework #2</td>
-                                <td>10/23/2026</td>
-                                <td>Not Submitted</td>
-                            </tr>
-
-                            <tr>
-                                <td>Midterm</td>
-                                <td>10/25/2026</td>
-                                <td>Not Started</td>
-                            </tr>
-                        </table>
-                    </div>
-
-                    <button>Edit Class and Assignments</button>
-                </div>
-
-                <div class="course">
-                    <div class="course-info">
-                        <h2><span style="font-weight: bold; color: blueviolet;">CPSC 315 - Ethics in Computing</span></h2>
-                        Meeting Time: M/W 9:00am-10:00am
-                        <br>
-                        Grade: 85%
-                    </div>
-
-                    <div class="course-content">
-                        <table>
-                            <tr>
-                                <th>Assignment</th>
-                                <th>Due Date</th>
-                                <th>Status</th>
-                            </tr>
-
-                            <tr>
-                                <td>Reading Assignment #1</td>
-                                <td>10/22/2026</td>
-                                <td>Submitted</td>
-                            </tr>
-
-                            <tr>
-                                <td>Paper #1</td>
-                                <td>10/24/2026</td>
-                                <td>Not Submitted</td>
-                            </tr>
-                        </table>
-                    </div>
-
-                    <button>Edit Class and Assignments</button>
-                </div>
+            <div class="panel">
+                <form id="course-form">
+                    <label>Course Title<input id="course-title" name="title" maxlength="50" placeholder="e.g., CPSC 349" required></label>
+                    <label>Meeting Day(s)<select id="course-meeting-days" name="meeting-days" required>
+                        <option disabled selected value>-- select an option --</option>
+                        <option value="M">Monday</option>
+                        <option value="T">Tuesday</option>
+                        <option value="W">Wednesday</option>
+                        <option value="Th">Thursday</option>
+                        <option value="F">Friday</option>
+                        <option value="Sat">Saturday</option>
+                        <option value="M/W">Monday/Wednesday</option>
+                        <option value="T/Th">Tuesday/Thursday</option>
+                    </select></label>
+                    <label>Meeting Start Time<input id="course-meating-time-start" name="time-start" type="time" placeholder="Start time" required></label>
+                    <label>Meeting End Time<input id="course-meating-time-end" name="time-end" type="time" placeholder="End time" required></label>
+                    <label>Grade<input id="course-grade" name="grade" type="number" step="0.01" min="0" max="100" placeholder="e.g. 90.0" required></label>
+                    <button type="submit">Add course</button>
+                </form>
+                <p id="form-message" role="status" aria-live="polite"></p>
             </div>
+
+            <div class="course-grid" id="course-grid"></div>
         </main>
     </body>
 </html>
