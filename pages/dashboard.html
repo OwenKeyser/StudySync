@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>StudySync Dashboard</title>
         <link rel="stylesheet" href="../styles/dashboard.css">
+        <script src="../scripts/dashboard.js" type="module" defer></script>
     </head>
 
     <body>
@@ -23,119 +24,42 @@
         <main class="layout">
             <h1>Dashboard</h1>
 
-            <p class="notice">Milestone demo only: this page is using demo data and cannot be edited.</p>
-
             <div class="dashboard-container">
                 <div class="deadline-container">
                     <h2>Upcoming Deadlines</h2>
 
-                    <table>
-                        <tr>
-                            <th>Assignment</th>
-                            <th>Due Date</th>
-                            <th>Status</th>
-                            <th>Course</th>
-                        </tr>
+                    <table id="assignment-table"></table>
 
-                        <tr>
-                            <td>Homework #1</td>
-                            <td>10/15/2026</td>
-                            <td>Submitted</td>
-                            <td>CSPC 362</td>
-                        </tr>
+                    <p class="notice" id="assignment-notice">No assignments added.</p>
 
-                        <tr>
-                            <td>Homework #2</td>
-                            <td>10/23/2026</td>
-                            <td>Not submitted</td>
-                            <td>CSPC 351</td>
-                        </tr>
-                    </table>
+                    <a href="course.html" class="dashboard-edit">View and Edit Assignments</a>
                 </div>
 
-                <div class="study-task-container">
-                    <h2>Study Tasks</h2>
+                <div class="study-session-container">
+                    <h2>Study Sessions</h2>
 
-                    <table>
+                    <table id="study-session-table">
                         <tr>
-                            <th>Study Task</th>
+                            <th>Study Session</th>
                             <th>Priority</th>
                             <th>Time Frame</th>
-                        </tr>
-                        <tr>
-                            <td>Read Chapter 1</td>
-                            <td>Meduim</td>
-                            <td>30 minutes</td>
-                        </tr>
-                        <tr>
-                            <td>Start Project 2</td>
-                            <td>High</td>
-                            <td>1 hour</td>
+                            <th>Course</th>
                         </tr>
                     </table>
+ 
+                    <p class="notice" id="study-session-notice">No study sessions added.</p>
+
+                    <a href="schedule.html" class="dashboard-edit">View and Edit Study Sessions</a>
                 </div>
 
                 <div class="course-container">
-                    <h2>
-                        Courses
-                    </h2>
+                    <h2>Courses</h2>
 
-                    <div class="course-grid">
-                        <div class="course">
-                            <div class="course-image"
-                                style="background-color: rgb(216, 140, 0);"></div>
-                            <div class="course-info">
-                                <span style="font-weight: bold; color: rgb(216, 140, 0);">
-                                    CPSC 362 - Front-end Engineering
-                                </span>
-                                <br>
-                                Meeting Time: M/W 1:00pm-2:00pm
-                                <br>
-                                Grade: 98%
-                            </div>
-                        </div>
+                    <div class="dashboard-course-grid"></div>
 
-                        <div class="course">
-                            <div class="course-image" style="background-color: rgb(0, 97, 0);"></div>
-                            <div class="course-info">
-                                <span style="font-weight: bold; color: rgb(0, 97, 0);">
-                                    CPSC 471 - Computer Communication
-                                </span>
-                                <br>
-                                Meeting Time: T/Th 4:00pm-5:00pm
-                                <br>
-                                Grade: 92%
-                            </div>
-                        </div>
+                    <p class="notice" id="course-notice">No Courses added.</p>
 
-                        <div class="course">
-                            <div class="course-image"
-                                style="background-color: rgb(204, 54, 0);"></div>
-                            <div class="course-info">
-                                <span style="font-weight: bold; color: rgb(204, 54, 0);">
-                                    CPSC 351 - Operating Systems
-                                </span>
-                                <br>
-                                Meeting Time: T 10:00am-12:00pm
-                                <br>
-                                Grade: 89%
-                            </div>
-                        </div>
-
-                        <div class="course">
-                            <div class="course-image"
-                                style="background-color: blueviolet;"></div>
-                            <div class="course-info">
-                                <span style="font-weight: bold; color: blueviolet;">
-                                    CPSC 315 - Ethics in Computing
-                                </span>
-                                <br>
-                                Meeting Time: M/W 9:00am-10:00am
-                                <br>
-                                Grade: 85%
-                            </div>
-                        </div>
-                    </div>
+                    <a href="course.html" class="dashboard-edit">View and Edit Courses</a>
                 </div>
             </div>
         </main>

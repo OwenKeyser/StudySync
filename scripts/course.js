@@ -1,13 +1,13 @@
 const COURSE_STORAGE_KEY = 'studysync.courses.v1';
-const ASSIGNMENT_KEYS = [];
+export const ASSIGNMENT_KEYS = [];
 
-const courseGrid = document.querySelector('#course-grid');
-const courseForm = document.querySelector('#course-form');
-const message = document.querySelector('#form-message');
+const courseGrid = document.querySelector('.course-grid') || document.createElement('div');
+const courseForm = document.querySelector('#course-form') || document.createElement('div');
+const message = document.querySelector('#form-message') || document.createElement('div');
 let courses = loadCourses();
 
 // Load Courses from local storage
-function loadCourses() {
+export function loadCourses() {
     try {
         const stored = JSON.parse(localStorage.getItem(COURSE_STORAGE_KEY) || '[]');
         return Array.isArray(stored) ? stored.filter(s => s && typeof s.id === 'string') : [];
@@ -15,7 +15,7 @@ function loadCourses() {
 }
 
 // Save courses to local storage
-function saveCourses() {
+export function saveCourses() {
     try { 
         localStorage.setItem(COURSE_STORAGE_KEY, JSON.stringify(courses));
         return true; 
@@ -27,7 +27,7 @@ function saveCourses() {
 }
 
 // Load Assignments for a specific class from local storage
-function loadAssignments(key) {
+export function loadAssignments(key) {
     try {
         const stored = JSON.parse(localStorage.getItem(key) || '[]');
         return Array.isArray(stored) ? stored.filter(s => s && typeof s.id === 'string') : [];
@@ -35,7 +35,7 @@ function loadAssignments(key) {
 }
 
 // Save Assignments for a specific class to local storage
-function saveAssignments(key, assignments) {
+export function saveAssignments(key, assignments) {
     try { 
         localStorage.setItem(key, JSON.stringify(assignments));
         return true; 
@@ -163,8 +163,9 @@ function render()  {
             const title = String(data.get('title')).trim();
             const dueDate = String(data.get('due-date'));
             const status = String(data.get('status')).trim();
+            const assignmentCourse = String(course.title).trim();
 
-            assignments.push({ id: crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random()}`, title, dueDate, status });
+            assignments.push({ id: crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random()}`, title, dueDate, status, assignmentCourse });
             for (const key of ASSIGNMENT_KEYS) {
                 if(key == `studysync.${course.id}.v1`) {
                     const saved = saveAssignments(key, assignments);
@@ -189,7 +190,7 @@ function render()  {
             assignments = null;
             for (let i=0; i<ASSIGNMENT_KEYS.length; i++) {
                 if(ASSIGNMENT_KEYS[i] == `studysync.${course.id}.v1`) {
-                    delete ASSIGNMENT_KEYS[i];
+                    ASSIGNMENT_KEYS.splice(i, i);
                 }
             }
 
@@ -201,9 +202,13 @@ function render()  {
         // Append content to course, then append course to course grid
         content.append(table, assignmentForm, remove);
         item.append(info, content);
-        courseGrid.append(item);
+        try {
+            courseGrid.append(item);
+        }
+        catch {}
     }
 }    
+
 
 // Event listener to add a course
 courseForm.addEventListener('submit', event => {
